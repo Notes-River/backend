@@ -33,7 +33,7 @@ Update
 ```
 to 
 
-``bash
+```bash
     <your mongodb atlas url>
 ```
 
