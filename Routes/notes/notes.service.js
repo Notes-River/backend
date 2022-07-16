@@ -35,7 +35,7 @@ class NotesService {
     async createReadList(req, res) {
         req.body.user = req.user._id;
         if (req.body.tags != undefined)
-            req.body.tags = JSON.parse(req.body.tags)
+            // req.body.tags = JSON.parse(req.body.tags)
         console.log(req.body)
         try {
             let path = Date.now() + req.user._id + 'logo';
