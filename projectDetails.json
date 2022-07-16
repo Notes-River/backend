@@ -1,0 +1,15 @@
+{
+    "name": "portfolio-manager",
+    "path": "",
+    "description": "create your portfolio in easy way",
+    "isDb": true,
+    "isLocalDB": true,
+    "dbUrl": "mongodb://localhost/",
+    "dbName": "notes_river",
+    "isAuth": true,
+    "routes": [
+        "/",
+        "/user",
+        "/notes"
+    ]
+}
