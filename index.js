@@ -39,6 +39,6 @@ app.use((req, res, next) => {
 require('./Config')(app);
 redis.connect().then(() => console.log('REDIS CONNECTION: TRUE')).catch((err) => console.log(err));
 
-server.listen(3000, (err) => {
+server.listen(port, (err) => {
   console.log('server is running on ===> http://localhost:3000');
 })
