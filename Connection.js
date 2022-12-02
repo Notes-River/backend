@@ -1,12 +1,12 @@
-module.exports = (projectDetails) => {
+module.exports = (dburl) => {
   const mongoose = require('mongoose')
 
   mongoose.Promise = Promise
 
   mongoose.connection.on('connected', () => {
     console.log('Connection Established with : notes_river');
-    console.log('Local: ',false);
-    
+    console.log('Local: ', false);
+
   })
 
   mongoose.connection.on('reconnected', () => {
@@ -25,7 +25,7 @@ module.exports = (projectDetails) => {
     console.log('ERROR: ' + error)
   })
   const run = async () => {
-    await mongoose.connect('mongodb://127.0.0.1/notes', {
+    await mongoose.connect(dburl, {
       useNewUrlParser: true,
       useFindAndModify: false,
       useCreateIndex: true,

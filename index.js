@@ -6,6 +6,9 @@ const projectDetails = require('./projectDetails.json');
 const cors = require('cors');
 const redis = require('./redis');
 const fs = require('fs').promises;
+const { config } = require('dotenv');
+
+config({path: __dirname+'/.env'});
 
 app.use(cors());
 app.use(express.json());
@@ -13,7 +16,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/public/', express.static("public"));
 app.use('/logo/', express.static("logo"));
 
-require('./Connection')(projectDetails);
+const port = process.env.PORT || 3003;
+const dburl = process.env.DB_URL || projectDetails.dburl;
+
+require('./Connection')(dburl);
 
 app.use((req, res, next) => {
   const startTime = Date.now();
