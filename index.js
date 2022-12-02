@@ -40,5 +40,5 @@ require('./Config')(app);
 redis.connect().then(() => console.log('REDIS CONNECTION: TRUE')).catch((err) => console.log(err));
 
 server.listen(port, (err) => {
-  console.log('server is running on ===> http://localhost:3000');
+  console.log('notes_river server is running on ===> http://localhost:' + port);
 })
